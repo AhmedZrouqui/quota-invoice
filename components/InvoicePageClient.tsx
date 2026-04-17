@@ -141,7 +141,9 @@ export function InvoicePageClient() {
         data-ad-format="horizontal"
         data-ad-size="728x90"
         data-full-width-responsive="true"
-      />
+      >
+        <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
+      </ins>
 
       {/*
         Full-width grid: gutter-left | form (same width as header) | gutter-right
@@ -159,7 +161,9 @@ export function InvoicePageClient() {
           data-ad-client="ca-pub-6248403565159369"
           data-ad-slot="left-sidebar"
           data-ad-format="vertical"
-        />
+        >
+          <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
+        </ins>
 
         {/* Form — center column, aligned with header */}
         <div className="px-4 py-6">
@@ -179,7 +183,9 @@ export function InvoicePageClient() {
           data-ad-client="ca-pub-6248403565159369"
           data-ad-slot="right-sidebar"
           data-ad-format="vertical"
-        />
+        >
+          <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
+        </ins>
       </div>
 
       {/* Bottom leaderboard ad */}
@@ -191,7 +197,9 @@ export function InvoicePageClient() {
         data-ad-format="horizontal"
         data-ad-size="728x90"
         data-full-width-responsive="true"
-      />
+      >
+        <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
+      </ins>
 
       <footer className="border-t border-gray-100 px-4 py-6">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4 text-xs text-gray-400">
