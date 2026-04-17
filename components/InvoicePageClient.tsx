@@ -140,6 +140,7 @@ export function InvoicePageClient() {
         data-ad-slot="top-leaderboard"
         data-ad-format="horizontal"
         data-ad-size="728x90"
+        data-full-width-responsive="true"
       />
 
       {/*
@@ -189,6 +190,7 @@ export function InvoicePageClient() {
         data-ad-slot="bottom-leaderboard"
         data-ad-format="horizontal"
         data-ad-size="728x90"
+        data-full-width-responsive="true"
       />
 
       <footer className="border-t border-gray-100 px-4 py-6">
