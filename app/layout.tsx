@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CookieNotice } from "@/components/CookieNotice";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,6 +62,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
+      <head>
+        <Script
+          id="adsense-init"
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6248403565159369`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-screen bg-background text-foreground font-sans">
         {children}
         <CookieNotice />

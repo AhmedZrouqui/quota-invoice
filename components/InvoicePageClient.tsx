@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { invoiceSchema } from "@/lib/validations";
 import type { InvoiceFormValues } from "@/lib/validations";
 import { computeInvoiceTotals } from "@/lib/calculations";
@@ -41,6 +41,23 @@ export function InvoicePageClient() {
   const [lang, setLang] = useState<Lang>("en");
   const [isGenerating, setIsGenerating] = useState(false);
   const [showMobilePreview, setShowMobilePreview] = useState(false);
+
+  useEffect(() => {
+    const pushAd = () => {
+      try {
+        const adsbygoogle = (window as any).adsbygoogle || [];
+        adsbygoogle.push({});
+      } catch (e) {
+        console.error("Adsbygoogle error", e);
+      }
+    };
+  
+    // We need to push for each <ins> tag present on the page
+    const adCount = document.querySelectorAll('.adsbygoogle').length;
+    for (let i = 0; i < adCount; i++) {
+      pushAd();
+    }
+  }, []);
 
   const t = getT(lang);
 
@@ -116,15 +133,14 @@ export function InvoicePageClient() {
       </header>
 
       {/* Top leaderboard ad — 728×90 */}
-      <div
-        className="border-b border-dashed border-gray-200 bg-gray-50 flex items-center justify-center h-[90px]"
+      <ins
+        className="adsbygoogle adsbygoogle-adbox border-b border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block"
+        data-ad-client="ca-pub-6248403565159369"
         aria-label="Advertisement"
         data-ad-slot="top-leaderboard"
-        data-ad-format="leaderboard"
+        data-ad-format="horizontal"
         data-ad-size="728x90"
-      >
-        <span className="text-xs text-gray-300">Advertisement</span>
-      </div>
+      />
 
       {/*
         Full-width grid: gutter-left | form (same width as header) | gutter-right
@@ -136,17 +152,13 @@ export function InvoicePageClient() {
         style={{ display: "grid", gridTemplateColumns: "1fr minmax(0, 1152px) 1fr" }}
       >
         {/* Left gutter ad */}
-        <aside
-          className="hidden xl:block py-6 pl-3 pr-2"
+        <ins
+          className="adsbygoogle adsbygoogle-adbox hidden xl:block py-6 pl-3 pr-2 w-full h-[600px]"
           aria-label="Advertisement"
+          data-ad-client="ca-pub-6248403565159369"
           data-ad-slot="left-sidebar"
-          data-ad-format="half-page"
-          data-ad-size="300x600"
-        >
-          <div className="sticky top-4 h-[600px] rounded border border-dashed border-gray-200 bg-gray-50 flex items-center justify-center">
-            <span className="text-xs text-gray-300 [writing-mode:vertical-lr]">Advertisement</span>
-          </div>
-        </aside>
+          data-ad-format="vertical"
+        />
 
         {/* Form — center column, aligned with header */}
         <div className="px-4 py-6">
@@ -160,29 +172,24 @@ export function InvoicePageClient() {
         </div>
 
         {/* Right gutter ad */}
-        <aside
-          className="hidden xl:block py-6 pl-2 pr-3"
+        <ins
+          className="adsbygoogle adsbygoogle-adbox hidden xl:block py-6 pl-2 pr-3 w-full h-[600px]"
           aria-label="Advertisement"
+          data-ad-client="ca-pub-6248403565159369"
           data-ad-slot="right-sidebar"
-          data-ad-format="half-page"
-          data-ad-size="300x600"
-        >
-          <div className="sticky top-4 h-[600px] rounded border border-dashed border-gray-200 bg-gray-50 flex items-center justify-center">
-            <span className="text-xs text-gray-300 [writing-mode:vertical-lr]">Advertisement</span>
-          </div>
-        </aside>
+          data-ad-format="vertical"
+        />
       </div>
 
       {/* Bottom leaderboard ad */}
-      <div
-        className="border-t border-dashed border-gray-200 bg-gray-50 flex items-center justify-center h-[90px] mt-6"
+      <ins
+        className="adsbygoogle adsbygoogle-adbox border-t border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block mt-6"
         aria-label="Advertisement"
+        data-ad-client="ca-pub-6248403565159369"
         data-ad-slot="bottom-leaderboard"
-        data-ad-format="leaderboard"
+        data-ad-format="horizontal"
         data-ad-size="728x90"
-      >
-        <span className="text-xs text-gray-300">Advertisement</span>
-      </div>
+      />
 
       <footer className="border-t border-gray-100 px-4 py-6">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4 text-xs text-gray-400">
