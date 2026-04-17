@@ -1,0 +1,29 @@
+# Quota Invoice
+
+> Free online invoice generator. Create and download professional PDF invoices instantly — no sign-up, no data stored on servers.
+
+Quota Invoice is a client-side web application for freelancers and small businesses to create professional invoices in seconds. All processing happens in the browser; no invoice data is ever sent to a server.
+
+## Features
+
+- Fill in sender and client details (name, email, address, phone)
+- Upload a company logo (PNG, JPG, SVG — compressed client-side)
+- Add unlimited line items with per-line quantity, unit price, discount %, and tax %
+- Supports 170+ currencies with correct decimal formatting (e.g. JPY has 0 decimals, KWD has 3)
+- Invoice-level discount field
+- Automatic discount summary and tax summary tables grouped by rate
+- Live PDF preview via floating button
+- Download a professional A4 PDF instantly — no server round-trip
+- No account, no email, no tracking of invoice content
+
+## Pages
+
+- [Home / Invoice Generator](https://quota.live): The single-page invoice generator. Users fill a form and download a PDF.
+
+## Tech
+
+Built with Next.js, React, Tailwind CSS, @react-pdf/renderer (client-side PDF), dinero.js (precise currency arithmetic), and Zod (form validation). Hosted on Vercel.
+
+## Intended audience
+
+Freelancers, contractors, consultants, and small business owners who need to send invoices quickly without creating an account or uploading sensitive data to a third-party service.

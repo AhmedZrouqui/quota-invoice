@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(unzip -j /tmp/inter.zip \"extras/ttf/Inter-Regular.ttf\" \"extras/ttf/Inter-SemiBold.ttf\" \"extras/ttf/Inter-Bold.ttf\" -d c:/workspace/quota-invoice/public/fonts/)"
     ]
   }
 }
