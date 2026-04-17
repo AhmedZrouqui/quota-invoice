@@ -133,37 +133,45 @@ export function InvoicePageClient() {
       </header>
 
       {/* Top leaderboard ad — 728×90 */}
-      <ins
-        className="adsbygoogle adsbygoogle-adbox border-b border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block"
-        data-ad-client="ca-pub-6248403565159369"
-        aria-label="Advertisement"
-        data-ad-slot="top-leaderboard"
-        data-ad-format="horizontal"
-        data-ad-size="728x90"
-        data-full-width-responsive="true"
-      >
-        <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
-      </ins>
+      <div className="relative">
+        <ins
+          className="adsbygoogle adsbygoogle-adbox border-b border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block"
+          data-ad-client="ca-pub-6248403565159369"
+          aria-label="Advertisement"
+          data-ad-slot="top-leaderboard"
+          data-ad-format="horizontal"
+          data-ad-size="728x90"
+          data-full-width-responsive="true"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center text-gray-400 text-sm"
+        >
+          Ad Placeholder
+        </div>
+      </div>
 
       {/*
-        Full-width grid: gutter-left | form (same width as header) | gutter-right
-        The center column uses the same max-width as the header's max-w-6xl (1152px).
-        Ads sit in the 1fr gutter columns and are hidden when there isn't enough space.
+        Responsive layout: single column on most screens, three columns at xl.
+        Side ads are hidden below 1280px, so the form takes full width until xl.
       */}
-      <div
-        className="w-full"
-        style={{ display: "grid", gridTemplateColumns: "1fr minmax(0, 1152px) 1fr" }}
-      >
+      <div className="w-full grid grid-cols-1 xl:[grid-template-columns:1fr_minmax(0,1152px)_1fr]">
         {/* Left gutter ad */}
-        <ins
-          className="adsbygoogle adsbygoogle-adbox hidden xl:block py-6 pl-3 pr-2 w-full h-[600px]"
-          aria-label="Advertisement"
-          data-ad-client="ca-pub-6248403565159369"
-          data-ad-slot="left-sidebar"
-          data-ad-format="vertical"
-        >
-          <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
-        </ins>
+        <div className="relative hidden xl:block py-6 pl-3 pr-2 w-full h-[600px]">
+          <ins
+            className="adsbygoogle adsbygoogle-adbox w-full h-full block"
+            aria-label="Advertisement"
+            data-ad-client="ca-pub-6248403565159369"
+            data-ad-slot="left-sidebar"
+            data-ad-format="vertical"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 flex items-center justify-center text-gray-400 text-sm"
+          >
+            Ad Placeholder
+          </div>
+        </div>
 
         {/* Form — center column, aligned with header */}
         <div className="px-4 py-6">
@@ -177,29 +185,41 @@ export function InvoicePageClient() {
         </div>
 
         {/* Right gutter ad */}
-        <ins
-          className="adsbygoogle adsbygoogle-adbox hidden xl:block py-6 pl-2 pr-3 w-full h-[600px]"
-          aria-label="Advertisement"
-          data-ad-client="ca-pub-6248403565159369"
-          data-ad-slot="right-sidebar"
-          data-ad-format="vertical"
-        >
-          <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
-        </ins>
+        <div className="relative hidden xl:block py-6 pl-2 pr-3 w-full h-[600px]">
+          <ins
+            className="adsbygoogle adsbygoogle-adbox w-full h-full block"
+            aria-label="Advertisement"
+            data-ad-client="ca-pub-6248403565159369"
+            data-ad-slot="right-sidebar"
+            data-ad-format="vertical"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 flex items-center justify-center text-gray-400 text-sm"
+          >
+            Ad Placeholder
+          </div>
+        </div>
       </div>
 
       {/* Bottom leaderboard ad */}
-      <ins
-        className="adsbygoogle adsbygoogle-adbox border-t border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block mt-6"
-        aria-label="Advertisement"
-        data-ad-client="ca-pub-6248403565159369"
-        data-ad-slot="bottom-leaderboard"
-        data-ad-format="horizontal"
-        data-ad-size="728x90"
-        data-full-width-responsive="true"
-      >
-        <div className="flex items-center justify-center h-full text-gray-400 text-sm">Ad Placeholder</div>
-      </ins>
+      <div className="relative mt-6">
+        <ins
+          className="adsbygoogle adsbygoogle-adbox border-t border-dashed border-gray-200 bg-gray-50 w-full h-[180px] block"
+          aria-label="Advertisement"
+          data-ad-client="ca-pub-6248403565159369"
+          data-ad-slot="bottom-leaderboard"
+          data-ad-format="horizontal"
+          data-ad-size="728x90"
+          data-full-width-responsive="true"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 flex items-center justify-center text-gray-400 text-sm"
+        >
+          Ad Placeholder
+        </div>
+      </div>
 
       <footer className="border-t border-gray-100 px-4 py-6">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4 text-xs text-gray-400">
